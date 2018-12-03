@@ -16,7 +16,7 @@ import org.json.JSONObject;
 /**
  * Servlet implementation class RecommendItem
  */
-@WebServlet("/recommendation")
+@WebServlet("/recommend")
 public class RecommendItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,18 +33,15 @@ public class RecommendItem extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();
+		// Testing with some fake data
 		JSONArray array = new JSONArray();
-
 		try {
-			array.put(new JSONObject().put("username", "abcd").put("address", "San Francisco").put("time", "01/01/2017"));
-			array.put(new JSONObject().put("username", "1234").put("address", "San Jose").put("time", "01/02/2017"));
+			array.put(new JSONObject().put("username", "fake").put("address", "San Diego").put("time", "01/01/2018"));
+			array.put(new JSONObject().put("username", "user").put("address", "Chula Vista").put("time", "01/02/2018"));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-
-		out.print(array);
-		out.close();
+		RpcHelper.writeJsonArray(response, array);		
 	}
 
 	/**
