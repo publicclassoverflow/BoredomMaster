@@ -23,20 +23,16 @@ public class SearchItem extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("application/json");
-		
-		PrintWriter out = response.getWriter();
+		// Testing with some fake data
 		JSONArray array = new JSONArray();
 		
 		try {
-			array.put(new JSONObject().put("fake", "user"));
-			array.put(new JSONObject().put("skt", "faker"));
+			array.put(new JSONObject().put("user", "fake"));
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		out.print(array);
-		out.close();
+		RpcHelper.writeJsonArray(response, array);		
 	}
 
 
