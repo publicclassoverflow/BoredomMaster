@@ -359,3 +359,88 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:592)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1498)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1471)
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2018-12-03 03:05:49.898
+!MESSAGE Full project indexing required:
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/annotations-api.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/catalina-ant.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/catalina-ha.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/catalina-storeconfig.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/catalina-tribes.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/catalina.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/ecj-4.7.3a.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/el-api.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/jasper-el.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/jasper.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/jaspic-api.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/jsp-api.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/servlet-api.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-api.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-coyote.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-dbcp.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-i18n-es.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-i18n-fr.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-i18n-ja.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-i18n-ru.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-jdbc.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-jni.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-util-scan.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-util.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/tomcat-websocket.jar
+  [+] /home/meng/Downloads/apache-tomcat-9.0.13/lib/websocket-api.jar
+  [+] /home/meng/boredom-workspace/BoredomMaster/WebContent/WEB-INF/lib/java-json.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+  [+] /usr/lib/jvm/java-11-openjdk-amd64/lib/jrt-fs.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:844)
