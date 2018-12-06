@@ -763,3 +763,6 @@ java.lang.ClassNotFoundException: org.eclipse.jgit.lfs.BuiltinLFS cannot be foun
 
 !ENTRY org.eclipse.jdt.core 4 0 2018-12-06 02:41:19.318
 !MESSAGE Error reading modules<module:jdk.attach>
+
+!ENTRY org.eclipse.jface.text 2 0 2018-12-06 02:58:24.007
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'

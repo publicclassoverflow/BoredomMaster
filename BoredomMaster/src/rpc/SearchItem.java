@@ -2,6 +2,7 @@ package rpc;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import entity.Item;
+import external.TicketMasterAPI;
+
 /**
  * Servlet implementation class SearchItem
  */
@@ -22,17 +26,24 @@ public class SearchItem extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setContentType("application/json");
-		// Testing with some fake data
+		// Test with http request like:
+		// http://localhost:8080/BoredomMaster/search?lat=32.7353&lon=-117.1490
+		double lat = Double.parseDouble(request.getParameter("lat"));
+		double lon = Double.parseDouble(request.getParameter("lon"));
+		// The term may be empty
+		String term = request.getParameter("term");
+		TicketMasterAPI tmAPI = new TicketMasterAPI();
+		List<Item> items = tmAPI.search(lat, lon, term);
 		JSONArray array = new JSONArray();
-		
 		try {
-			array.put(new JSONObject().put("user", "fake"));
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
+			for (Item item : items) {
+				JSONObject obj = item.toJSONObject();
+				array.put(obj);
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		RpcHelper.writeJsonArray(response, array);		
+		RpcHelper.writeJsonArray(response, array);
 	}
 
 

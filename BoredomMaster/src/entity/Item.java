@@ -93,6 +93,39 @@ public class Item {
 		private String url;
 		private double distance;
 		
+		// Setters for the fields
+		public void setItemId(String itemId) {
+			this.itemId = itemId;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public void setRating(double rating) {
+			this.rating = rating;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public void setCategories(Set<String> categories) {
+			this.categories = categories;
+		}
+
+		public void setImageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public void setDistance(double distance) {
+			this.distance = distance;
+		}
+		
 		public Item build() {
 			return new Item(this);
 		}
