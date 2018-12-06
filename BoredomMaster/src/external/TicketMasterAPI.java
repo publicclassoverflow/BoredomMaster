@@ -84,11 +84,11 @@ public class TicketMasterAPI {
 	public static void main(String[] args) {
 		TicketMasterAPI api = new TicketMasterAPI();
 		// San Diego Zoo
-		api.queryAPI(32.7353, 117.1490);
+		// api.queryAPI(32.7353, 117.1490);
 		// SDCCU Stadium
 		api.queryAPI(32.7831, 117.1196);
 		// Old Trafford Stadium
-		api.queryAPI(53.4631, 2.2913);
+		// api.queryAPI(53.4631, 2.2913);
 	}
 
 }
