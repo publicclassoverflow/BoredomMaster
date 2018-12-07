@@ -17,7 +17,7 @@ ul {
 }
 
 /**
- * top header
+ * Top header
  */
 .top-header {
 	align-items: center;
@@ -43,7 +43,7 @@ ul {
 }
 
 /**
- * top navigation
+ * Top navigation bar
  */
 .top-nav {
 	flex: 1;
@@ -62,7 +62,7 @@ ul {
 }
 
 /**
- * main container
+ * The main container
  */
 .container {
 	margin: 60px auto;
@@ -71,13 +71,15 @@ ul {
 }
 
 /**
- * main header
+ * The main header
  */
 .container>header {
 	align-items: center;
 	background:
-		url('https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwi8ot7rp4jfAhXO5p8KHf-iBIMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.complex.com%2Flife%2F2017%2F10%2Fmeet-the-parent-of-your-favorite-meme-kid-gavin&psig=AOvVaw13psoBtJLyV2R3peDY4NQD&ust=1544086296390413')
-		no-repeat 50% 50%;
+		/* Gavin Thomas meme pictures kind of represent how we react when we feel bored
+		/* url('https://images.complex.com/complex/images/c_limit,w_680/fl_lossy,pg_1,q_auto/g5kot08xgsaq7c0vjpdm/gavin') */ 
+		url('https://noticiasdebariloche.com.ar/wp-content/uploads/2018/11/Gavin-Thomas-4.jpg')
+        no-repeat 50% 50%;
 	background-size: 100%;
 	display: flex;
 	height: 250px;
@@ -97,14 +99,14 @@ ul {
 }
 
 /**
- * main section
+ * The main section
  */
 .main-section {
 	background: #F3BB43;
 }
 
 /**
- * aside
+ * Side navigation
  */
 #item-nav {
 	float: left;
@@ -118,7 +120,7 @@ ul {
 }
 
 /**
- * main navigation
+ * The main navigation section
  */
 .main-nav-btn {
 	background: none;
@@ -145,7 +147,7 @@ ul {
 }
 
 /**
- * item list
+ * The list of events
  */
 #item-list {
 	background: #F2EBD9;
@@ -163,7 +165,7 @@ ul {
 }
 
 /**
- * item
+ * Events section
  */
 .item {
 	align-items: center;
@@ -230,7 +232,7 @@ ul {
 }
 
 /**
- * footer section
+ * The footer section
  */
 footer {
 	background: #434343;
