@@ -74,7 +74,6 @@ public class ItemHistory extends HttpServlet {
 			String userId = requestBody.getString("user_id");
 			JSONArray array = requestBody.getJSONArray("favorite");
 			// Get all the items/events liked by the user
-			// Let the user delete all of her/his history for now
 			List<String> itemIds = new ArrayList<>();
 			for (int i = 0; i < array.length(); i++) {
 				itemIds.add(array.getString(i));
