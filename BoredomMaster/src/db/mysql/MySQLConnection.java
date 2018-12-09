@@ -36,14 +36,43 @@ public class MySQLConnection implements DBConnection {
 
 	@Override
 	public void setFavoriteItems(String userId, List<String> itemIds) {
-		// TODO Auto-generated method stub
-
+		if (connection == null) {
+			System.err.println("Database connection failed");
+			return;
+		}
+		// Add the user's item/event into the history table
+		try {
+			String sql = "INSERT IGNORE INTO history(user_id, item_id) VALUES (?, ?)";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			// <userId, itemId>
+			preparedStatement.setString(1, userId);
+			for (String itemId : itemIds) {
+				preparedStatement.setString(2, itemId);
+				preparedStatement.execute();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void unsetFavoriteItems(String userId, List<String> itemIds) {
-		// TODO Auto-generated method stub
-
+		if (connection == null) {
+			System.err.println("Database connection failed");
+			return;
+		}
+		// Remove the item/event from the user's history table
+		try {
+			String sql = "DELETE FROM history WHERE user_id = ? AND item_id = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, userId);
+			for (String itemId : itemIds) {
+				preparedStatement.setString(2, itemId);
+				preparedStatement.execute();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
