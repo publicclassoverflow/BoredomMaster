@@ -1,5 +1,7 @@
 package db;
 
+import db.mysql.MySQLConnection;
+
 public class DBConnectionFactory {
 	// This is used to create different database instances
 	private static final String DEFAULT_DB = "mysql";
@@ -9,8 +11,7 @@ public class DBConnectionFactory {
 	public static DBConnection getConnection(String db) {
 		switch (db) {
 		case MYSQL:
-			// return new MySQLConnection();
-			return null;
+			return new MySQLConnection();
 		case MONGODB:
 			// Support for MongoDB will be implemented in the future
 			// return new MongoDBConnection();
