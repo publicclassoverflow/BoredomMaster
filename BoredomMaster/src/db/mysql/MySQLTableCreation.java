@@ -19,16 +19,17 @@ public class MySQLTableCreation {
 			
 			// Drop the tables if there exists any
 			Statement statement = conn.createStatement();
-			String sql = "DROP TABLE IF EXISTS users";
-			statement.executeUpdate(sql);
-			
-			sql = "DROP TABLE IF EXISTS items";
-			statement.executeUpdate(sql);
-			
-			sql = "DROP TABLE IF EXISTS categories";
+			// Drop categories and history tables first because there are foreign keys
+			String sql = "DROP TABLE IF EXISTS categories";
 			statement.executeUpdate(sql);
 			
 			sql = "DROP TABLE IF EXISTS history";
+			statement.executeUpdate(sql);
+			
+			sql = "DROP TABLE IF EXISTS users";
+			statement.executeUpdate(sql);
+			
+			sql = "DROP TABLE IF EXISTS items";
 			statement.executeUpdate(sql);
 			
 			// Create users, items, categories, and history tables
@@ -70,8 +71,12 @@ public class MySQLTableCreation {
 					+ "FOREIGN KEY (item_id) REFERENCES items(item_id)"
 					+ ")";
 			statement.executeUpdate(sql);
-
 			
+			// Add a fake user for testing purpose
+			// Hashed fake password typed randomly for fun...
+			sql = "INSERT INTO users VALUES ('0000', '3229c1097c00d497a0fd282d586be050', 'Fake', 'User')";
+			statement.executeUpdate(sql);
+
 			System.out.println("Import successfully");
 
 		} catch (Exception e) {
