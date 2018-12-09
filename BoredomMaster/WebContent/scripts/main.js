@@ -30,7 +30,7 @@
                 onLoadPositionFailed, {
                     maximumAge: 60000
                 });
-            showLoadingMessage('Retrieving your location...');
+            showLoadingMessage('Gathering fun near your location...');
         } else {
             onLoadPositionFailed();
         }
@@ -39,7 +39,6 @@
     function onPositionUpdated(position) {
         lat = position.coords.latitude;
         lng = position.coords.longitude;
-
         loadNearbyItems();
     }
 
@@ -195,7 +194,7 @@
         var req = JSON.stringify({});
 
         // display loading message
-        showLoadingMessage('Loading nearby items...');
+        showLoadingMessage('Gathering fun in your area...');
 
         // make AJAX call
         ajax('GET', url + '?' + params, req,
@@ -203,14 +202,14 @@
             function(res) {
                 var items = JSON.parse(res);
                 if (!items || items.length === 0) {
-                    showWarningMessage('No nearby item.');
+                    showWarningMessage('Hmm... Nothing fun to hang around...');
                 } else {
                     listItems(items);
                 }
             },
             // failed callback
             function() {
-                showErrorMessage('Cannot load nearby items.');
+                showErrorMessage('Failed load nearby items.');
             });
     }
 
@@ -233,12 +232,12 @@
         ajax('GET', url + '?' + params, req, function(res) {
             var items = JSON.parse(res);
             if (!items || items.length === 0) {
-                showWarningMessage('No favorite item.');
+                showWarningMessage('No favorite items saved.');
             } else {
                 listItems(items);
             }
         }, function() {
-            showErrorMessage('Cannot load favorite items.');
+            showErrorMessage('Failed to load favorite items.');
         });
     }
 
@@ -256,7 +255,7 @@
         var req = JSON.stringify({});
 
         // display loading message
-        showLoadingMessage('Loading recommended items...');
+        showLoadingMessage('Let\'s see what we have got for your taste...');
 
         // make AJAX call
         ajax(
@@ -267,14 +266,14 @@
             function(res) {
                 var items = JSON.parse(res);
                 if (!items || items.length === 0) {
-                    showWarningMessage('No recommended item. Make sure you have favorites.');
+                    showWarningMessage('Nothing recommended! Make sure you have favorite items.');
                 } else {
                     listItems(items);
                 }
             },
             // failed callback
             function() {
-                showErrorMessage('Cannot load recommended items.');
+                showErrorMessage('Failed to load recommended items.');
             });
     }
 
@@ -285,7 +284,7 @@
      *            The item business id
      * 
      * API end point: [POST]/[DELETE] /Dashi/history request json data: {
-     * user_id: 1111, visited: [a_list_of_business_ids] }
+     * user_id: 0000, visited: [a_list_of_business_ids] }
      */
     function changeFavoriteItem(item_id) {
         // Check whether this item has been visited or not
@@ -355,7 +354,7 @@
         li.dataset.item_id = item_id;
         li.dataset.favorite = item.favorite;
 
-        // Show the event's image
+        // Show the item's image
         if (item.image_url) {
             li.appendChild($('img', {
                 src: item.image_url
@@ -386,8 +385,7 @@
         category.innerHTML = 'Category: ' + item.categories.join(', ');
         section.appendChild(category);
 
-        // TODO(vincent). here we might have a problem showing 3.5 as 3.
-        // stars
+        // stars/ratings
         var stars = $('div', {
             className: 'stars'
         });
