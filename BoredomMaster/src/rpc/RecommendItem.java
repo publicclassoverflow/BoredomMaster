@@ -1,7 +1,7 @@
 package rpc;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
+
+import algorithm.GeoRecommendation;
+import entity.Item;
 
 /**
  * Servlet implementation class RecommendItem
@@ -32,16 +34,24 @@ public class RecommendItem extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("application/json");
-		// Testing with some fake data
-		JSONArray array = new JSONArray();
+		double lat = Double.parseDouble(request.getParameter("lat"));
+		double lon = Double.parseDouble(request.getParameter("lon"));
+		String userId = request.getParameter("user_id");
+
+		// Get recommendation based on user's location and taste
+		// Display the results
+		GeoRecommendation recommendation = new GeoRecommendation();
 		try {
-			array.put(new JSONObject().put("username", "fake").put("address", "San Diego").put("time", "01/01/2018"));
-			array.put(new JSONObject().put("username", "user").put("address", "Chula Vista").put("time", "01/02/2018"));
-		} catch (JSONException e) {
+			List<Item> items = recommendation.recommendItems(userId, lat, lon);
+			JSONArray array = new JSONArray();
+			for (Item item : items) {
+				JSONObject obj = item.toJSONObject();
+				array.put(obj);
+			}
+			RpcHelper.writeJsonArray(response, array);
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		RpcHelper.writeJsonArray(response, array);		
+		}	
 	}
 
 	/**
@@ -51,5 +61,4 @@ public class RecommendItem extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

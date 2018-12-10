@@ -182,7 +182,7 @@
 
     /**
      * API #1 Load the nearby items API end point: [GET]
-     * /Dashi/search?user_id=1111&lat=37.38&lon=-122.08
+     * /Dashi/search?user_id=0000&lat=37.38&lon=-122.08
      */
     function loadNearbyItems() {
         console.log('loadNearbyItems');
@@ -215,7 +215,7 @@
 
     /**
      * API #2 Load favorite (or visited) items API end point: [GET]
-     * /Dashi/history?user_id=1111
+     * /Dashi/history?user_id=0000
      */
     function loadFavoriteItems() {
         activeBtn('fav-btn');
@@ -243,13 +243,13 @@
 
     /**
      * API #3 Load recommended items API end point: [GET]
-     * /Dashi/recommendation?user_id=1111
+     * /Dashi/recommend?user_id=0000
      */
     function loadRecommendedItems() {
         activeBtn('recommend-btn');
 
         // The request parameters
-        var url = './recommendation';
+        var url = './recommend';
         var params = 'user_id=' + user_id + '&lat=' + lat + '&lon=' + lng;
 
         var req = JSON.stringify({});
