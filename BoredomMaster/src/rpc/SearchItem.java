@@ -3,6 +3,7 @@ package rpc;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,13 +35,20 @@ public class SearchItem extends HttpServlet {
 		double lon = Double.parseDouble(request.getParameter("lon"));
 		// The term may be empty
 		String term = request.getParameter("term");
+		// Get the user's info (user_id) such that her/his favorite history can be fetched
+		String userId = request.getParameter("user_id");
 		// Search and add the items/events into database
 		DBConnection connection = DBConnectionFactory.getConnection();
 		try {
+			// Search for nearby items
 			List<Item> items = connection.searchItems(lat, lon, term);
+			// Get the user's favorite history
+			Set<String> favoriteItems = connection.getFavoriteItemIds(userId);
+			// Display the response
 			JSONArray array = new JSONArray();
 			for (Item item : items) {
 				JSONObject obj = item.toJSONObject();
+				obj.put("favorite", favoriteItems.contains(item.getItemId()));
 				array.put(obj);
 			}
 			RpcHelper.writeJsonArray(response, array);
@@ -58,5 +66,4 @@ public class SearchItem extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
